@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10px;
+            background-color: #03032d;
+            color: #fff;
+        }
+
+        .logo a{
+            font-size: 15px;
+            color:#fff;
+            text-decoration: none;
+        }
+        .navbar-menu{
+            list-style: none;
+            display: flex;
+        }
+        .navbar-menu li{
+            margin-left: 20px;
+        }
+        .navbar-menu a{
+            color:#fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .navbar-menu a:hover{ color:#5cb85c; font-size: 30px; text-transform: uppercase;}
+
+        h1{ font-size: 30px; color:#5cb85c}
+        .space{
+            padding: 10px 10px;
+        }
+        p{ 
+            font-size: 20px;
+        }
+
+        footer{
+            background-color: #000080;
+            color:#fff;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .footer-content {margin-left: 15px;}
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+            <a href="#" >CRUD-Django</a>
+        </div>
+        <ul class="navbar-menu">
+            <li> <a href="{% url 'show'%}">Liste</a> </li>
+            <li> <a href="{% url 'insert'%}">Inserer</a> </li>
+            <li> <a href="">Contact</a> </li>
+        </ul>
+    </nav>
+
+    <h1>Bienvenue !</h1>
+
+    <p> Il s'agit ici d'une simple application django qui permet de: </p>
+    <ul>
+        <li class="space"> Creer </li>
+        <li class="space"> Afficher </li>
+        <li class="space"> Modifier </li>
+        <li class="space"> Supprimer </li>
+    </ul>
+
+    <footer>
+        <div class="footer-content">
+            <h5> N'hesitez pas de me contacte si tu rencontres des difficulte </h5>
+            <h5> Email: mandepriscillechabuelle@gmail.com </h5>
+        </div>
+    </footer>
+</body>
+</html>

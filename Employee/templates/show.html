@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Employés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #5cb85c;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a{
+            text-decoration: none;}
+        a:hover{
+            background-color: #000080;
+            color: #fff;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Liste des Employés</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Date de Naissance</th>
+                <th>Date d'Embauche</th>
+                <th>Adresse</th>
+                <th>Poste</th>
+                <th>Salaire</th>
+                <th colspan="2">Action </th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for shows in show %}
+            <tr>
+                <td>{{shows.nom}}</td>
+                <td>{{shows.prenom}}</td>
+                <td>{{shows.email}}</td>
+                <td>{{shows.telephone}}</td>
+                <td>{{shows.date_naissance}}</td>
+                <td>{{shows.date_embauche}}</td>
+                <td>{{shows.adresse}}</td>
+                <td>{{shows.poste}}</td>
+                <td>{{shows.salaire}}</td>
+                <td> <a href="/edit/{{shows.pk}}">Update</a> </td>
+                <td> <a href="/remove/{{shows.pk}}">Delete</a> </td>
+            </tr>
+            {% empty %} <p> aucun employe</p>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
